@@ -46,6 +46,7 @@
 </div>
 <script>
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxbaw4mdLV5lFKfuINMkHjccmxfYPCZ_FOaukc246YWrMWoYDoc3P--yxwtBQgP3ew5/exec";
+const TOKEN = "bu9038jelly";
 
 function saveLog(type, action){
   if(!type || !action) return;
@@ -56,6 +57,7 @@ function saveLog(type, action){
       keepalive:true,
       headers:{"Content-Type":"text/plain;charset=utf-8"},
       body:JSON.stringify({
+        token:TOKEN,
         type:type,
         action:action
       })
