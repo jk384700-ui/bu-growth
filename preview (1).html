@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta property="og:title" content="BU 성장유형 탐색소" />
+<meta property="og:description" content="30초 만에 나에게 맞는 졸업생특화프로그램 성장유형을 찾아보세요." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<title>BU 성장유형 탐색소</title>
+<style>
+:root{--bg:#fff8ee;--card:#fffdf8;--ink:#24211d;--muted:#7a7168;--line:#eadfcc;--purple:#7065ff;--shadow:0 18px 45px rgba(82,65,38,.13)}
+*{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:linear-gradient(180deg,#fff8ee,#f6f1e8);color:var(--ink)}
+.wrap{width:min(560px,100%);margin:0 auto;padding:22px 16px 42px}.card{background:rgba(255,253,248,.92);border:1px solid var(--line);border-radius:34px;padding:28px 22px;box-shadow:var(--shadow);text-align:center}.brand{display:inline-block;background:#eeebff;color:var(--purple);font-weight:800;border-radius:999px;padding:10px 18px;margin-bottom:14px}.chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:18px 0}.chip{background:white;border:1px solid var(--line);border-radius:999px;padding:9px 15px;color:#7b6d61;font-weight:700;font-size:14px}.title{font-size:34px;line-height:1.15;margin:12px 0 12px;font-weight:900;letter-spacing:-1px}.sub{color:#756c63;line-height:1.65;margin:0 auto;word-break:keep-all}.jellyStage{height:210px;display:flex;align-items:center;justify-content:center;position:relative}.jelly{width:152px;height:142px;border-radius:52% 48% 46% 54%/58% 56% 44% 42%;background:radial-gradient(circle at 35% 25%,#c9c1ff,#7f75f8 70%);position:relative;box-shadow:0 18px 35px rgba(113,103,255,.22);animation:float 2.4s ease-in-out infinite}.jelly:before,.jelly:after{content:"";position:absolute;top:62px;width:12px;height:19px;background:#28232d;border-radius:999px}.jelly:before{left:54px}.jelly:after{right:54px}.mouth{position:absolute;left:65px;top:88px;width:24px;height:13px;border-bottom:3px solid #28232d;border-radius:0 0 20px 20px}.badge{position:absolute;right:120px;bottom:26px;background:white;border-radius:999px;padding:15px;font-size:28px;box-shadow:0 8px 18px rgba(0,0,0,.12);animation:pop 1.7s infinite}.homeJelly{animation:float 2.4s ease-in-out infinite, wobble 3s ease-in-out infinite}.btn{appearance:none;border:0;border-radius:18px;background:#6f63ff;color:white;font-weight:900;padding:15px 18px;font-size:16px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:52px}.btn.secondary{background:#fff;border:1px solid var(--line);color:#4c443e}.btn.accent{background:#ff8a3d}.btnRow{display:grid;grid-template-columns:1fr;gap:10px;margin-top:20px}.notice{font-size:13px;color:#8a8178;margin-top:22px;line-height:1.6}.qTop{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;color:#756c63;font-weight:700}.bar{height:9px;background:#eee2cf;border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;background:#7065ff;border-radius:999px;transition:.25s}.question{font-size:24px;font-weight:900;text-align:left;line-height:1.35;letter-spacing:-.5px;word-break:keep-all;margin:20px 0}.opts{display:grid;gap:10px}.opt{width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px 15px;font-size:16px;font-weight:800;line-height:1.35;cursor:pointer;word-break:keep-all}.opt:hover{border-color:#7065ff;transform:translateY(-1px)}.back{margin-top:18px;text-align:left;color:#897f74;font-weight:800;cursor:pointer}.resultJelly{margin:12px auto 20px}.jellyName{display:inline-block;margin:2px 0 8px;padding:7px 13px;border-radius:999px;background:#f4f1ff;color:#6156df;font-weight:950}.typeTitle{font-size:30px;font-weight:950;margin:0}.sectionTitle{display:inline-block;margin:14px 0 10px;padding:8px 14px;border-radius:999px;background:#fff1dd;color:#d45d1d;font-weight:900}.programs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0}.pill{white-space:nowrap;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 13px;font-weight:850;font-size:14px}.ideaBox{display:block;text-decoration:none;margin:14px 0;background:linear-gradient(135deg,#fff1cf,#ffe3d9);border:1px solid #ffd0a6;color:#63391f;border-radius:20px;padding:15px;font-weight:950;line-height:1.35}.loading{display:none}.loading.show{display:block}.miniJelly{width:74px;height:68px;margin:55px auto 18px;border-radius:52% 48% 46% 54%;background:#adf0a2;animation:birth 2.8s ease-in-out forwards}.loadingText{font-size:22px;font-weight:900}.adminLink{display:block;margin:18px auto 0;color:#9a9086;font-size:13px;text-decoration:none}.adminGrid{display:grid;gap:10px;margin-top:16px}.stat{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;text-align:left;font-weight:850}.hidden{display:none!important}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}@keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}@keyframes wobble{0%,100%{border-radius:52% 48% 46% 54%/58% 56% 44% 42%}50%{border-radius:45% 55% 54% 46%/50% 60% 40% 50%}}@keyframes birth{0%{transform:scale(.2);opacity:.2}45%{transform:scale(.7);opacity:1}70%{transform:scale(1.25)}100%{transform:scale(1)}}
+.map{background:radial-gradient(circle at 35% 25%,#fff1a2,#ffd44c 75%)}.gear{background:radial-gradient(circle at 35% 25%,#ffd1a4,#ff8a3d 75%)}.explore{background:radial-gradient(circle at 35% 25%,#caf7b6,#52c86f 75%)}.go{background:radial-gradient(circle at 35% 25%,#ffb4b4,#f04b4b 75%)}.accessory{position:absolute;font-size:34px;left:50%;top:-20px;transform:translateX(-50%)}.accessory.side{top:30px;left:-12px;transform:none}.accessory.trail{left:auto;right:-35px;top:55px;transform:none}.go{animation:float 1.4s ease-in-out infinite, dash 1.1s ease-in-out infinite}@keyframes dash{0%,100%{transform:translateX(0)}50%{transform:translateX(10px)}}
+
+/* Final jelly accessories */
+.glasses{position:absolute;left:50%;top:56px;transform:translateX(-50%);width:70px;height:28px;z-index:3}
+.glasses:before,.glasses:after{content:"";position:absolute;top:0;width:25px;height:22px;border:4px solid #2b2530;border-radius:50%;background:rgba(255,255,255,.12)}
+.glasses:before{left:0}.glasses:after{right:0}.glasses i{position:absolute;left:31px;top:11px;width:8px;height:4px;background:#2b2530;border-radius:999px;display:block}
+.muscle{position:absolute;top:50px;font-size:38px;z-index:4}.muscle.left{left:-48px;transform:rotate(-8deg)}.muscle.right{right:-48px;transform:scaleX(-1) rotate(8deg)}
+.hat{position:absolute;left:50%;top:-34px;transform:translateX(-50%) rotate(-7deg);font-size:43px;z-index:4}.compass{position:absolute;right:-35px;bottom:14px;font-size:34px;z-index:4}
+.speed{position:absolute;font-size:35px;z-index:4}.speed.left{left:-44px;top:42px;transform:scaleX(-1)}.speed.right{right:-45px;top:42px}.brow{position:absolute;top:39px;width:30px;height:7px;background:#28232d;border-radius:999px;z-index:3}.brow.left{left:39px;transform:rotate(16deg)}.brow.right{right:39px;transform:rotate(-16deg)}.go .mouth{width:30px;height:16px;left:61px;top:89px;border-bottom-width:4px}
+
+@media(min-width:460px){.btnRow.two{grid-template-columns:1fr 1fr}.title{font-size:40px}}
+</style>
+</head>
+<body><div class="wrap">
+<section id="home" class="card">
+  <div class="chips"><span class="chip">⏱️ 약 30초 소요</span><span class="chip">📝 8개 질문</span><span class="chip">😊 정답 없어요</span></div>
+  <div class="brand">백석대학교 대학일자리플러스센터</div>
+  <div class="jellyStage"><div class="jelly homeJelly"><span class="mouth"></span></div><div class="badge">✨</div></div>
+  <h1 class="title">BU 성장유형 탐색소</h1>
+  <p class="sub">취업 준비라는 말이 조금 무겁게 느껴질 때,<br>지금 나에게 필요한 성장 경험을<br>가볍게 찾아보는 30초 테스트예요.</p>
+  <div class="btnRow"><button class="btn" onclick="startTest()">테스트 시작하기</button></div>
+  <p class="notice">백석대학교 대학일자리플러스센터 졸업생특화프로그램<br>본 테스트는 평가가 아닌 성장 스타일 안내 콘텐츠이며, 정답은 없습니다.</p>
+</section>
+<section id="quiz" class="card hidden">
+ <div class="qTop"><span id="qNum"></span><span id="qType">BU 성장유형 탐색소</span></div><div class="bar"><i id="progress"></i></div>
+ <div id="question" class="question"></div><div id="options" class="opts"></div><div class="back" onclick="prevQ()">← 이전 질문</div>
+</section>
+<section id="loading" class="card loading"><div class="miniJelly"></div><div class="loadingText">젤리가 결과를 만드는 중...</div><p class="sub">잠시만 기다려주세요 ✨</p></section>
+<section id="result" class="card hidden"></section>
+<section id="admin" class="card hidden"><h1 class="title">관리자 통계</h1><p class="sub">이 기기 브라우저에 저장된 테스트 결과 기준입니다.</p><div id="stats" class="adminGrid"></div><div class="btnRow"><button class="btn secondary" onclick="resetStats()">통계 초기화</button><a class="btn" href="./">검사 페이지로 이동</a></div></section>
+</div>
+<script>
+const TYPES={
+ map:{name:'방향탐색형',jelly:'탐험가 젤리',label:'[현직자 멘토링]',emoji:'🧭',cls:'map',acc:'🗺️',desc:'당신은 다양한 직무와 진로를 탐색하며 자신에게 맞는 방향을 찾아가는 성장 단계에 있습니다. 아직 명확한 목표가 정해지지 않았더라도 괜찮습니다. 현직자와 선배의 경험을 듣고 직무 정보를 탐색하면 나에게 맞는 방향을 더 구체적으로 발견할 수 있습니다.',programs:['진로·취업상담','현직자 부트캠프','졸업선배 멘토링'],url:'https://forms.gle/edcCXVmfMyLVrXSA6'},
+ gear:{name:'역량장착형',jelly:'장비장착 젤리',label:'[수요자 맞춤형 프로그램]',emoji:'🛠️',cls:'gear',acc:'💪',desc:'당신은 목표를 향해 필요한 역량을 차근차근 쌓아가는 성장 단계에 있습니다. 관심 분야는 어느 정도 있지만, 실제 취업 준비를 위해 자격증, 실무교육, 자기소개서, 면접 등 구체적인 준비가 더 필요한 유형입니다.',programs:['자격증 취득과정','자소서 컨설팅','면접 컨설팅','직무 역량 강화교육'],url:'https://forms.gle/4A1wqvzzGKCmqv459'},
+ explore:{name:'경험개척형',jelly:'개척자 젤리',label:'[자기주도형 프로그램]',emoji:'🌿',cls:'explore',acc:'🧢',desc:'당신은 직접 경험하면서 가능성을 넓혀가는 성장 단계에 있습니다. 정해진 길을 따라가기보다 나에게 필요한 활동을 찾고, 프로젝트·대외활동·실무경험을 통해 진로 방향을 구체화할 때 더 크게 성장할 수 있습니다.',programs:['JOB 드라이브','아이디어 공모전','현장 경험'],url:'https://forms.gle/sX5JZ8N3ohTcNN7r5',idea:'https://forms.gle/WE8w23ocSw6Uxu4E8'},
+ go:{name:'취업직진형',jelly:'직진로켓 젤리',label:'[지역기업 채용연계 프로그램]',emoji:'🎯',cls:'go',acc:'💨',desc:'당신은 실제 채용시장 진입을 준비하는 성장 단계에 있습니다. 기업 정보, 채용공고, 면접 기회, 일경험 등 실질적인 취업 연결이 중요한 유형입니다. 지금은 준비한 역량을 실제 기회와 연결하는 것이 핵심입니다.',programs:['채용연계','채용박람회','채용설명회'],url:'https://forms.gle/tkXtqjzYNqfeas6W9'}
+};
+const consultUrl='https://forms.gle/ZopsEnAn5tfEFQKfA';
+const questions=[
+ {q:'현재 나의 취업 준비 상태와 가장 가까운 것은?',a:[['아직 어떤 직무가 맞는지 잘 모르겠다','map'],['목표는 있지만 필요한 역량을 더 채우고 싶다','gear'],['직접 경험하며 나만의 스토리를 만들고 싶다','explore'],['바로 지원할 기업과 채용정보가 필요하다','go']]},
+ {q:'취업 준비에서 지금 가장 궁금한 것은?',a:[['현직자는 실제로 어떤 일을 하는지','map'],['내가 어떤 역량을 더 갖춰야 하는지','gear'],['실무 경험을 어떻게 쌓을 수 있는지','explore'],['채용 기회를 어디서 찾을 수 있는지','go']]},
+ {q:'프로그램을 하나 고른다면 더 끌리는 것은?',a:[['현직자와 졸업선배 이야기 듣기','map'],['자격증·자소서·면접처럼 필요한 준비하기','gear'],['내가 원하는 프로그램을 제안하고 참여하기','explore'],['기업과 연결되는 채용연계 프로그램 참여하기','go']]},
+ {q:'취업 준비를 비유하면 지금 나는?',a:[['방향을 찾기 위해 지도를 펼친 상태','map'],['출발 전 필요한 장비를 챙기는 상태','gear'],['새로운 길을 직접 걸어보는 상태','explore'],['목표 지점을 향해 속도를 내는 상태','go']]},
+ {q:'나에게 가장 필요한 도움은?',a:[['진로 방향 설정과 직무 이해','map'],['부족한 역량 보완과 실전 준비','gear'],['경험 만들기와 프로그램 제안 기회','explore'],['기업 정보와 채용 기회 연결','go']]},
+ {q:'취업 프로그램에서 가장 기대하는 것은?',a:[['막막함이 줄어드는 것','map'],['실력이 쌓이는 것','gear'],['새로운 경험이 생기는 것','explore'],['실제 취업 기회를 얻는 것','go']]},
+ {q:'내가 더 자주 하는 생각은?',a:[['내가 뭘 좋아하고 잘하는지 알고 싶다','map'],['지원서와 면접을 더 잘 준비하고 싶다','gear'],['내가 직접 해볼 수 있는 활동이 있으면 좋겠다','explore'],['좋은 기업 공고가 있으면 바로 지원하고 싶다','go']]},
+ {q:'지금 나에게 가장 어울리는 한 문장은?',a:[['방향을 찾으면 더 잘 움직일 수 있다','map'],['준비한 만큼 자신감이 생긴다','gear'],['경험은 직접 만들어가는 것이다','explore'],['기회가 오면 바로 잡아야 한다','go']]}
+];
+let idx=0, answers=[];
+function show(id){['home','quiz','loading','result','admin'].forEach(x=>document.getElementById(x).classList.add('hidden'));document.getElementById(id).classList.remove('hidden');if(id==='loading')document.getElementById(id).classList.add('show')}
+function startTest(){idx=0;answers=[];renderQ();show('quiz')}
+function renderQ(){document.getElementById('qNum').textContent=`${idx+1} / ${questions.length}`;document.getElementById('progress').style.width=((idx+1)/questions.length*100)+'%';document.getElementById('question').textContent=questions[idx].q;document.getElementById('options').innerHTML=questions[idx].a.map(x=>`<button class="opt" onclick="pick('${x[1]}')">${x[0]}</button>`).join('');document.querySelector('.back').style.visibility=idx? 'visible':'hidden'}
+function pick(t){answers[idx]=t;if(idx<questions.length-1){idx++;renderQ()}else{showLoading()}}
+function prevQ(){if(idx>0){idx--;renderQ()}}
+function showLoading(){show('loading');setTimeout(showResult,3000)}
+function calc(){const c={map:0,gear:0,explore:0,go:0};answers.forEach(x=>c[x]++);return Object.entries(c).sort((a,b)=>b[1]-a[1])[0][0]}
+function jellyAccessories(key){
+ if(key==='map') return `<span class="glasses"><i></i></span>`;
+ if(key==='gear') return `<span class="muscle left">💪</span><span class="muscle right">💪</span>`;
+ if(key==='explore') return `<span class="hat">🤠</span><span class="compass">🧭</span>`;
+ if(key==='go') return `<span class="speed left">💨</span><span class="speed right">💨</span><span class="brow left"></span><span class="brow right"></span>`;
+ return '';
+}
+function showResult(){const key=calc(), t=TYPES[key];saveStat(key);document.getElementById('result').innerHTML=`<div class="brand">${t.label}</div><div class="jelly resultJelly ${t.cls}">${jellyAccessories(key)}<span class="mouth"></span></div><div class="jellyName">${t.jelly}</div><h1 class="typeTitle">${t.emoji} ${t.name}</h1><p class="sub">${t.desc}</p><div class="sectionTitle">추천 프로그램</div><div class="programs">${t.programs.map(p=>`<span class="pill">${p}</span>`).join('')}</div>${t.idea?`<a class="ideaBox" href="${t.idea}" target="_blank">✨ 나에게 필요한 프로그램 아이디어 제안하기</a>`:''}<div class="btnRow two"><a class="btn secondary" href="${consultUrl}" target="_blank">상담 신청하러가기</a><a class="btn" href="${t.url}" target="_blank">프로그램 신청하러가기</a></div><div class="btnRow"><button class="btn accent" onclick="downloadResult('${key}')">결과 이미지 저장하기</button><button class="btn accent" onclick="shareResult('${key}')">친구에게 공유하기</button><button class="btn secondary" onclick="startTest()">다시 테스트하기</button></div>`;show('result')}
+function saveStat(k){let s=JSON.parse(localStorage.getItem('buStats')||'{"total":0,"map":0,"gear":0,"explore":0,"go":0}');s.total++;s[k]++;localStorage.setItem('buStats',JSON.stringify(s))}
+function renderAdmin(){let s=JSON.parse(localStorage.getItem('buStats')||'{"total":0,"map":0,"gear":0,"explore":0,"go":0}');document.getElementById('stats').innerHTML=`<div class="stat">총 참여자: ${s.total}명</div>`+Object.keys(TYPES).map(k=>`<div class="stat">${TYPES[k].emoji} ${TYPES[k].name}: ${s[k]||0}명</div>`).join('');show('admin')}
+function resetStats(){if(confirm('통계를 초기화할까요?')){localStorage.removeItem('buStats');renderAdmin()}}
+
+
+function roundedRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath()}
+function wrapKoreanText(ctx,text,x,y,maxWidth,lineHeight){
+  const chars=[...text]; let line='', lines=[];
+  for(const ch of chars){
+    const test=line+ch;
+    if(ctx.measureText(test).width>maxWidth && line){lines.push(line); line=ch;}
+    else line=test;
+  }
+  if(line) lines.push(line);
+  lines.forEach((l,i)=>ctx.fillText(l,x,y+i*lineHeight));
+  return y+lines.length*lineHeight;
+}
+function drawBlob(ctx,cx,cy,w,h,color,key){
+  ctx.save();
+
+  // accessories behind jelly
+  ctx.font='64px system-ui, Apple Color Emoji, Segoe UI Emoji'; ctx.textAlign='center'; ctx.textBaseline='middle';
+  if(key==='gear'){
+    ctx.fillText('💪',cx-w*.66,cy+8);
+    ctx.save(); ctx.translate(cx+w*.66,cy+8); ctx.scale(-1,1); ctx.fillText('💪',0,0); ctx.restore();
+  }
+  if(key==='go'){
+    ctx.font='58px system-ui, Apple Color Emoji, Segoe UI Emoji';
+    ctx.save(); ctx.translate(cx-w*.64,cy-5); ctx.scale(-1,1); ctx.fillText('💨',0,0); ctx.restore();
+    ctx.fillText('💨',cx+w*.64,cy-5);
+  }
+
+  // CSS jelly와 최대한 비슷하게: 납작한 단색이 아니라 radial gradient + 하이라이트 + 그림자
+  ctx.shadowColor='rgba(0,0,0,.14)'; ctx.shadowBlur=34; ctx.shadowOffsetY=18;
+  const grad=ctx.createRadialGradient(cx-w*.18,cy-h*.23,10,cx,cy,w*.58);
+  const light={map:'#fff1a2',gear:'#ffd1a4',explore:'#caf7b6',go:'#ffb4b4'}[key] || '#c9c1ff';
+  grad.addColorStop(0, light); grad.addColorStop(.55,color); grad.addColorStop(1,color);
+  ctx.fillStyle=grad;
+  ctx.beginPath();
+  ctx.ellipse(cx,cy,w*.50,h*.50,0,0,Math.PI*2);
+  ctx.fill();
+  ctx.shadowColor='transparent';
+
+  // 젤리 하단 볼륨감
+  const shine=ctx.createLinearGradient(cx,cy-h*.2,cx,cy+h*.45);
+  shine.addColorStop(0,'rgba(255,255,255,.20)');
+  shine.addColorStop(1,'rgba(255,255,255,0)');
+  ctx.fillStyle=shine;
+  ctx.beginPath();
+  ctx.ellipse(cx-w*.10,cy-h*.12,w*.30,h*.24,-.25,0,Math.PI*2);
+  ctx.fill();
+  ctx.fillStyle='rgba(255,255,255,.35)';
+  ctx.beginPath();ctx.ellipse(cx-w*.20,cy-h*.25,w*.08,h*.05,-.35,0,Math.PI*2);ctx.fill();
+
+  // front accessories
+  ctx.font='64px system-ui, Apple Color Emoji, Segoe UI Emoji'; ctx.textAlign='center'; ctx.textBaseline='middle';
+  if(key==='explore'){
+    ctx.fillText('🤠',cx,cy-h*.60);
+    ctx.font='54px system-ui, Apple Color Emoji, Segoe UI Emoji'; ctx.fillText('🧭',cx+w*.50,cy+h*.27);
+  }
+
+  // face
+  ctx.fillStyle='#28232d';
+  if(key==='go'){
+    ctx.strokeStyle='#28232d'; ctx.lineWidth=8; ctx.lineCap='round';
+    ctx.beginPath(); ctx.moveTo(cx-68,cy-58); ctx.lineTo(cx-36,cy-48); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(cx+36,cy-48); ctx.lineTo(cx+68,cy-58); ctx.stroke();
+  }
+  ctx.beginPath();ctx.ellipse(cx-45,cy-12,10,18,0,0,Math.PI*2);ctx.fill();
+  ctx.beginPath();ctx.ellipse(cx+45,cy-12,10,18,0,0,Math.PI*2);ctx.fill();
+  ctx.strokeStyle='#28232d'; ctx.lineWidth=5; ctx.lineCap='round'; ctx.beginPath(); ctx.arc(cx,cy+33,22,0.1*Math.PI,0.9*Math.PI); ctx.stroke();
+
+  if(key==='map'){
+    ctx.strokeStyle='#28232d'; ctx.lineWidth=7;
+    ctx.beginPath(); ctx.ellipse(cx-45,cy-12,27,20,0,0,Math.PI*2); ctx.stroke();
+    ctx.beginPath(); ctx.ellipse(cx+45,cy-12,27,20,0,0,Math.PI*2); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(cx-18,cy-12); ctx.lineTo(cx+18,cy-12); ctx.stroke();
+  }
+  ctx.restore();
+}
+function drawPill(ctx,text,x,y,w,h){
+  ctx.save();
+  ctx.fillStyle='#fffaf2'; ctx.strokeStyle='#eadfcc'; ctx.lineWidth=2;
+  roundedRect(ctx,x,y,w,h,h/2); ctx.fill(); ctx.stroke();
+  ctx.fillStyle='#24211d'; ctx.font='bold 28px system-ui, sans-serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
+  ctx.fillText(text,x+w/2,y+h/2+1);
+  ctx.restore();
+}
+function downloadResult(k){
+  const t=TYPES[k];
+  const c=document.createElement('canvas'); c.width=1080; c.height=1600;
+  const ctx=c.getContext('2d');
+  const colors={map:'#ffd44c',gear:'#ff8a3d',explore:'#52c86f',go:'#f04b4b'};
+  ctx.fillStyle='#fff8ee';ctx.fillRect(0,0,c.width,c.height);
+  ctx.fillStyle='#fffdf8';roundedRect(ctx,70,70,940,1460,58);ctx.fill();
+  ctx.fillStyle='#7065ff';ctx.font='bold 40px system-ui, sans-serif';ctx.textAlign='center';ctx.textBaseline='alphabetic';
+  ctx.fillText('BU 성장유형 탐색소',540,165);
+  drawBlob(ctx,540,355,300,270,colors[k],k);
+  ctx.fillStyle='#6156df';ctx.font='bold 42px system-ui, sans-serif';ctx.fillText(t.jelly,540,575);
+  ctx.fillStyle='#24211d';ctx.font='bold 64px system-ui, sans-serif';ctx.fillText(`${t.emoji} ${t.name}`,540,660);
+  ctx.fillStyle='#4f4842';ctx.font='34px system-ui, sans-serif';ctx.textAlign='left';ctx.textBaseline='top';
+  let y=wrapKoreanText(ctx,t.desc,145,735,790,56);
+  y+=58;
+  ctx.fillStyle='#d45d1d';ctx.font='bold 38px system-ui, sans-serif';ctx.textAlign='center';ctx.textBaseline='alphabetic';ctx.fillText('추천 프로그램',540,y);
+  y+=34;
+  const pillW=360, pillH=62, gap=22;
+  t.programs.forEach((p,i)=>{
+    const row=Math.floor(i/2), col=i%2;
+    const x=160+col*(pillW+gap);
+    drawPill(ctx,p,x,y+row*(pillH+18),pillW,pillH);
+  });
+  const rows=Math.ceil(t.programs.length/2);
+  y+=rows*(pillH+18)+40;
+  if(t.idea){
+    ctx.fillStyle='#fff1cf';roundedRect(ctx,150,y,780,82,28);ctx.fill();ctx.strokeStyle='#ffd0a6';ctx.lineWidth=2;ctx.stroke();
+    ctx.fillStyle='#63391f';ctx.font='bold 31px system-ui, sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('✨ 나에게 필요한 프로그램 아이디어 제안하기',540,y+43); y+=120;
+  }
+  ctx.fillStyle='#7a7168';ctx.font='28px system-ui, sans-serif';ctx.textAlign='center';ctx.textBaseline='alphabetic';
+  ctx.fillText('백석대학교 대학일자리플러스센터',540,1430);
+  ctx.font='25px system-ui, sans-serif';ctx.fillText('졸업생특화프로그램',540,1475);
+  const a=document.createElement('a');a.download=`BU성장유형_${t.name}.png`;a.href=c.toDataURL('image/png');a.click();
+}
+
+async function shareResult(k){const text=`나는 BU 성장유형 탐색소에서 ${TYPES[k].name}이 나왔어! 너도 해봐 😊`;const url=location.origin + location.pathname;if(navigator.share){await navigator.share({title:'BU 성장유형 탐색소',text,url})}else{await navigator.clipboard.writeText(text+' '+url);alert('공유 문구와 링크를 복사했어요!')}}
+if(new URLSearchParams(location.search).get('admin')==='1')renderAdmin();
+</script></body></html>
