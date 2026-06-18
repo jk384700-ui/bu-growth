@@ -45,6 +45,24 @@
 <section id="admin" class="card hidden"><h1 class="title">관리자 통계</h1><p class="sub">이 기기 브라우저에 저장된 테스트 결과 기준입니다.</p><div id="stats" class="adminGrid"></div><div class="btnRow"><button class="btn secondary" onclick="resetStats()">통계 초기화</button><a class="btn" href="./">검사 페이지로 이동</a></div></section>
 </div>
 <script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxbaw4mdLV5lFKfuINMkHjccmxfYPCZ_FOaukc246YWrMWoYDoc3P--yxwtBQgP3ew5/exec";
+
+function saveLog(type, action){
+  if(!type || !action) return;
+  try{
+    fetch(SCRIPT_URL,{
+      method:"POST",
+      mode:"no-cors",
+      keepalive:true,
+      headers:{"Content-Type":"text/plain;charset=utf-8"},
+      body:JSON.stringify({
+        type:type,
+        action:action
+      })
+    }).catch(function(){});
+  }catch(e){}
+}
+
 const TYPES={
  map:{name:'방향탐색형',jelly:'탐험가 젤리',label:'[현직자 멘토링]',emoji:'🧭',cls:'map',acc:'🗺️',desc:'당신은 다양한 직무와 진로를 탐색하며 자신에게 맞는 방향을 찾아가는 성장 단계에 있습니다. 아직 명확한 목표가 정해지지 않았더라도 괜찮습니다. 현직자와 선배의 경험을 듣고 직무 정보를 탐색하면 나에게 맞는 방향을 더 구체적으로 발견할 수 있습니다.',programs:['진로·취업상담','현직자 부트캠프','졸업선배 멘토링'],url:'https://forms.gle/edcCXVmfMyLVrXSA6'},
  gear:{name:'역량장착형',jelly:'장비장착 젤리',label:'[수요자 맞춤형 프로그램]',emoji:'🛠️',cls:'gear',acc:'💪',desc:'당신은 목표를 향해 필요한 역량을 차근차근 쌓아가는 성장 단계에 있습니다. 관심 분야는 어느 정도 있지만, 실제 취업 준비를 위해 자격증, 실무교육, 자기소개서, 면접 등 구체적인 준비가 더 필요한 유형입니다.',programs:['자격증 취득과정','자소서 컨설팅','면접 컨설팅','직무 역량 강화교육'],url:'https://forms.gle/4A1wqvzzGKCmqv459'},
@@ -77,7 +95,7 @@ function jellyAccessories(key){
  if(key==='go') return `<span class="speed left">💨</span><span class="speed right">💨</span><span class="brow left"></span><span class="brow right"></span>`;
  return '';
 }
-function showResult(){const key=calc(), t=TYPES[key];saveStat(key);document.getElementById('result').innerHTML=`<div class="brand">${t.label}</div><div class="jelly resultJelly ${t.cls}">${jellyAccessories(key)}<span class="mouth"></span></div><div class="jellyName">${t.jelly}</div><h1 class="typeTitle">${t.emoji} ${t.name}</h1><p class="sub">${t.desc}</p><div class="sectionTitle">추천 프로그램</div><div class="programs">${t.programs.map(p=>`<span class="pill">${p}</span>`).join('')}</div>${t.idea?`<a class="ideaBox" href="${t.idea}" target="_blank">✨ 나에게 필요한 프로그램 아이디어 제안하기</a>`:''}<div class="btnRow two"><a class="btn secondary" href="${consultUrl}" target="_blank">상담 신청하러가기</a><a class="btn" href="${t.url}" target="_blank">프로그램 신청하러가기</a></div><div class="btnRow"><button class="btn accent" onclick="downloadResult('${key}')">결과 이미지 저장하기</button><button class="btn accent" onclick="shareResult('${key}')">친구에게 공유하기</button><button class="btn secondary" onclick="startTest()">다시 테스트하기</button></div>`;show('result')}
+function showResult(){const key=calc(), t=TYPES[key];saveStat(key);saveLog(t.name,'검사완료');document.getElementById('result').innerHTML=`<div class="brand">${t.label}</div><div class="jelly resultJelly ${t.cls}">${jellyAccessories(key)}<span class="mouth"></span></div><div class="jellyName">${t.jelly}</div><h1 class="typeTitle">${t.emoji} ${t.name}</h1><p class="sub">${t.desc}</p><div class="sectionTitle">추천 프로그램</div><div class="programs">${t.programs.map(p=>`<span class="pill">${p}</span>`).join('')}</div>${t.idea?`<a class="ideaBox" href="${t.idea}" target="_blank" onclick="saveLog('${t.name}','아이디어제안클릭')">✨ 나에게 필요한 프로그램 아이디어 제안하기</a>`:''}<div class="btnRow two"><a class="btn secondary" href="${consultUrl}" target="_blank" onclick="saveLog('${t.name}','상담신청클릭')">상담 신청하러가기</a><a class="btn" href="${t.url}" target="_blank" onclick="saveLog('${t.name}','프로그램신청클릭')">프로그램 신청하러가기</a></div><div class="btnRow"><button class="btn accent" onclick="downloadResult('${key}')">결과 이미지 저장하기</button><button class="btn accent" onclick="shareResult('${key}')">친구에게 공유하기</button><button class="btn secondary" onclick="startTest()">다시 테스트하기</button></div>`;show('result')}
 function saveStat(k){let s=JSON.parse(localStorage.getItem('buStats')||'{"total":0,"map":0,"gear":0,"explore":0,"go":0}');s.total++;s[k]++;localStorage.setItem('buStats',JSON.stringify(s))}
 function renderAdmin(){let s=JSON.parse(localStorage.getItem('buStats')||'{"total":0,"map":0,"gear":0,"explore":0,"go":0}');document.getElementById('stats').innerHTML=`<div class="stat">총 참여자: ${s.total}명</div>`+Object.keys(TYPES).map(k=>`<div class="stat">${TYPES[k].emoji} ${TYPES[k].name}: ${s[k]||0}명</div>`).join('');show('admin')}
 function resetStats(){if(confirm('통계를 초기화할까요?')){localStorage.removeItem('buStats');renderAdmin()}}
@@ -168,6 +186,7 @@ function drawPill(ctx,text,x,y,w,h){
 }
 function downloadResult(k){
   const t=TYPES[k];
+  saveLog(t.name,'이미지저장클릭');
   const c=document.createElement('canvas'); c.width=1080; c.height=1600;
   const ctx=c.getContext('2d');
   const colors={map:'#ffd44c',gear:'#ff8a3d',explore:'#52c86f',go:'#f04b4b'};
@@ -201,6 +220,6 @@ function downloadResult(k){
   const a=document.createElement('a');a.download=`BU성장유형_${t.name}.png`;a.href=c.toDataURL('image/png');a.click();
 }
 
-async function shareResult(k){const text=`나는 BU 성장유형 탐색소에서 ${TYPES[k].name}이 나왔어! 너도 해봐 😊`;const url=location.origin + location.pathname;if(navigator.share){await navigator.share({title:'BU 성장유형 탐색소',text,url})}else{await navigator.clipboard.writeText(text+' '+url);alert('공유 문구와 링크를 복사했어요!')}}
+async function shareResult(k){saveLog(TYPES[k].name,'친구공유클릭');const text=`나는 BU 성장유형 탐색소에서 ${TYPES[k].name}이 나왔어! 너도 해봐 😊`;const url=location.origin + location.pathname;if(navigator.share){await navigator.share({title:'BU 성장유형 탐색소',text,url})}else{await navigator.clipboard.writeText(text+' '+url);alert('공유 문구와 링크를 복사했어요!')}}
 if(new URLSearchParams(location.search).get('admin')==='1')renderAdmin();
 </script></body></html>
